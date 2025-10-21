@@ -1,0 +1,26 @@
+{
+  "name": "vk_post_with_image",
+  "description": "Публикует пост с изображением в сообществе ВКонтакте. Требуется пользовательский access token администратора с правами wall и photos. Обратите внимание: запуск из Украины может быть невозможен из-за блокировки API ВКонтакте провайдерами (например, «Колумбус»).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "access_token": {
+        "type": "string",
+        "description": "Пользовательский access token администратора группы с правами wall и photos (долгоживущий, получен через Implicit Flow)."
+      },
+      "image_url": {
+        "type": "string",
+        "description": "Публичный URL изображения. Должен возвращать корректный image/* Content-Type и быть доступен для скачивания."
+      },
+      "message": {
+        "type": "string",
+        "description": "Текст поста (опционально)."
+      },
+      "group_id": {
+        "type": "integer",
+        "description": "ID сообщества (без минуса). Обязательный параметр."
+      }
+    },
+    "required": ["access_token", "image_url", "group_id"]
+  }
+}
